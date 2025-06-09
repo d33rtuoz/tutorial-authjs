@@ -1,7 +1,7 @@
-import { db } from '@/db';
-import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import type { NextAuthConfig } from 'next-auth';
-import GitHub from 'next-auth/providers/github';
+import { db } from "@/db";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import type { NextAuthConfig } from "next-auth";
+import GitHub from "next-auth/providers/github";
 
 export const authConfig = {
   adapter: DrizzleAdapter(db),
@@ -19,4 +19,5 @@ export const authConfig = {
     },
   },
   providers: [GitHub],
+  trustHost: true,
 } satisfies NextAuthConfig;
