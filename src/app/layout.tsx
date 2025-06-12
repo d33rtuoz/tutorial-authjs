@@ -1,4 +1,5 @@
 import BottomNavigation from "@/components/bottom-navigation";
+import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,10 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body className="min-h-screen">
-        <main className="p-4 pb-16">{children}</main>
-        <BottomNavigation />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="p-4 pb-16">{children}</main>
+          <BottomNavigation />
+        </ThemeProvider>
       </body>
     </html>
   );

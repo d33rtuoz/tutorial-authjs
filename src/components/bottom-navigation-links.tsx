@@ -27,13 +27,20 @@ export default function BottomNavigationLinks({
 }) {
   const pathname = usePathname();
 
+  const isActivePath = (path: string) => {
+    if (path === "/" && pathname !== path) {
+      return false;
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
     <ul className="flex flex-row justify-around">
       {links.map((link) => (
         <li
           key={link.href}
           className={clsx(
-            link.href === pathname && " underline underline-offset-4",
+            isActivePath(link.href) && "underline underline-offset-4",
           )}
         >
           <Link href={link.href}>{link.label}</Link>
@@ -44,7 +51,7 @@ export default function BottomNavigationLinks({
           <Link
             href="profile"
             className={clsx(
-              "/profile" === pathname && " underline underline-offset-4",
+              "/profile" === pathname && "underline underline-offset-4",
             )}
           >
             {username}

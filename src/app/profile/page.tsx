@@ -1,6 +1,7 @@
 "use server";
 
 import { auth } from "@/auth";
+import ThemeToggle from "@/components/theme-toggle";
 import { redirect } from "next/navigation";
 
 export default async function ProfilePage() {
@@ -22,6 +23,7 @@ export default async function ProfilePage() {
       <p>{name}</p>
       <p>{email}</p>
       <p>{id}</p>
+      <ThemeToggle />
     </>
   );
 }
