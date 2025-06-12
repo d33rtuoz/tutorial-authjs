@@ -7,7 +7,7 @@ export default async function BottomNavigation() {
   const session = await auth();
 
   return (
-    <nav className="fixed bottom-0 left-0 p-4 w-full">
+    <nav className="fixed bottom-0 left-0 p-4 w-full bg-background">
       <BottomNavigationLinks username={session?.user?.name || ""} />
     </nav>
   );

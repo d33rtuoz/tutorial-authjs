@@ -39,9 +39,7 @@ export default function BottomNavigationLinks({
       {links.map((link) => (
         <li
           key={link.href}
-          className={clsx(
-            isActivePath(link.href) && "underline underline-offset-4",
-          )}
+          className={clsx(isActivePath(link.href) && "text-primary")}
         >
           <Link href={link.href}>{link.label}</Link>
         </li>
@@ -50,9 +48,7 @@ export default function BottomNavigationLinks({
         {username ? (
           <Link
             href="profile"
-            className={clsx(
-              "/profile" === pathname && "underline underline-offset-4",
-            )}
+            className={clsx("/profile" === pathname && "text-primary")}
           >
             {username}
           </Link>
