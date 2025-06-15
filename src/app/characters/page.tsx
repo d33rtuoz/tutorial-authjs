@@ -7,41 +7,6 @@ import Form from "next/form";
 import Link from "next/link";
 import CharacterCard from "./character-card";
 
-const devData = [
-  {
-    id: "1",
-    name: "Vathek",
-    level: "1",
-    species: "Goliath",
-    class: "Barbarian",
-    picture: "/barbarian.png",
-  },
-  {
-    id: "2",
-    name: "Aetmos",
-    level: "1",
-    species: "Tiefling",
-    class: "Bard",
-    picture: "/bard.png",
-  },
-  {
-    id: "3",
-    name: "Aura",
-    level: "1",
-    species: "Gnome",
-    class: "Cleric",
-    picture: "/cleric.png",
-  },
-  {
-    id: "4",
-    name: "Rassura",
-    level: "1",
-    species: "Elf",
-    class: "Druid",
-    picture: "/druid.png",
-  },
-];
-
 export default async function CharactersPage() {
   const characters = await getCharacters();
 

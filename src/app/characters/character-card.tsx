@@ -10,10 +10,10 @@ export default function CharacterCard({
 }: {
   character: {
     id: number;
-    name: string;
-    level: number;
-    species: string;
-    class: string;
+    name: string | null;
+    level: number | null;
+    species: string | null;
+    class: string | null;
   };
 }) {
   return (
