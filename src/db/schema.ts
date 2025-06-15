@@ -98,6 +98,8 @@ export const characters = pg.pgTable("characters", {
   id: pg.integer("id").primaryKey().generatedAlwaysAsIdentity(),
   name: pg.varchar("name", { length: 255 }),
   class: pg.varchar("class", { length: 255 }),
+  level: pg.integer("level"),
+  species: pg.varchar("species", { length: 255 }),
 });
 
 export const charactersRelations = relations(characters, ({ one }) => ({

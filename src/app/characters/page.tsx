@@ -1,94 +1,44 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { H1, P } from "@/components/ui/typography";
+import { H1 } from "@/components/ui/typography";
 import { getCharacters } from "@/lib/queries/characters";
 import Form from "next/form";
 import Link from "next/link";
+import CharacterCard from "./character-card";
 
 const devData = [
   {
     id: "1",
     name: "Vathek",
-    level: 2,
-    species: "Tiefling",
-    class: "Rogue",
-    picture:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L1YJ4M2ClFEmRe2W_NYfo5WSHAxImtW2vw&s",
+    level: "1",
+    species: "Goliath",
+    class: "Barbarian",
+    picture: "/barbarian.png",
   },
   {
     id: "2",
-    name: "Vi",
-    level: 10,
-    species: "Gnome",
-    class: "Artificier",
-    picture:
-      "https://i0.wp.com/dungeonsanddragonsfan.com/wp-content/uploads/2024/09/new-gnome-dnd-2024-17.png?resize=800%2C450&ssl=1",
+    name: "Aetmos",
+    level: "1",
+    species: "Tiefling",
+    class: "Bard",
+    picture: "/bard.png",
   },
   {
     id: "3",
     name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
+    level: "1",
+    species: "Gnome",
+    class: "Cleric",
+    picture: "/cleric.png",
   },
   {
     id: "4",
-    name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
-  },
-  {
-    id: "5",
-    name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
-  },
-  {
-    id: "6",
-    name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
-  },
-  {
-    id: "7",
-    name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
-  },
-  {
-    id: "8",
-    name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
-  },
-  {
-    id: "9",
-    name: "Aura",
-    level: 2,
-    species: "Tiefling",
-    class: "Ranger",
-    picture: "https://i.redd.it/qlvdvg0af2671.jpg",
+    name: "Rassura",
+    level: "1",
+    species: "Elf",
+    class: "Druid",
+    picture: "/druid.png",
   },
 ];
 
@@ -105,27 +55,11 @@ export default async function CharactersPage() {
         <Input type="search" name="character-name" id="character-name" />
       </Form>
 
-      {/* <ul>
+      <ul className="flex flex-col gap-4 mb-14">
         {characters &&
           characters.map((character) => (
-            <p key={character.id}>{character.name + ": " + character.class}</p>
-          ))}
-      </ul> */}
-
-      <ul className="flex flex-col gap-4 mb-14">
-        {devData &&
-          devData.map((character) => (
-            <li>
-              <Card>
-                <CardHeader className="">
-                  <CardTitle>{character.name}</CardTitle>
-                  <CardDescription className="flex flex-auto gap-2">
-                    <span>Level {character.level}</span>
-                    <span>{character.class}</span>
-                    <span>{character.species}</span>
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+            <li key={character.id}>
+              <CharacterCard character={character} />
             </li>
           ))}
       </ul>

@@ -16,7 +16,7 @@ export function H2({ className, ...props }: React.ComponentProps<"h2">) {
   return (
     <h2
       className={cn(
-        "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+        "scroll-m-20 pb-4 text-3xl font-semibold tracking-tight first:mt-0",
         className,
       )}
       {...props}
@@ -37,10 +37,5 @@ export function H3({ className, ...props }: React.ComponentProps<"h3">) {
 }
 
 export function P({ className, ...props }: React.ComponentProps<"p">) {
-  return (
-    <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
-      {...props}
-    />
-  );
+  return <p className={cn("leading-7 mb-4", className)} {...props} />;
 }
