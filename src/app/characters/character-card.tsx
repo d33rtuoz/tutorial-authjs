@@ -9,9 +9,9 @@ export default function CharacterCard({
   character,
 }: {
   character: {
-    id: string;
+    id: number;
     name: string;
-    level: string;
+    level: number;
     species: string;
     class: string;
   };
